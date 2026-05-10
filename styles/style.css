@@ -192,7 +192,7 @@ dialog::backdrop {
 background: linear-gradient(180deg,rgba(26, 26, 26, 0.85), rgba(30, 30, 40, 0.95));
 }
 
-dialog[open] .column-cont{
+dialog[open] .column-cont {
   display: grid;
   gap: 20px;
   grid-template-columns: auto 1fr;
