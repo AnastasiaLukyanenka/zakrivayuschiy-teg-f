@@ -4,7 +4,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -13,4 +12,330 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--card-title-weight);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+  font-style: var(--accent-font);
+}
+
+.header {
+  background-color: var(--bg-color);
+  block-size: clamp(327px, calc(233.666px + 13.993vw), 370px);
+  margin: 98px auto;
+  display: grid;
+  place-items: center;
+  border: 2px solid #000000;
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+}
+
+.block {
+  inline-size: var(--inline-size);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-group {
+  display: grid;
+  gap: 20px;
+}
+
+.header-logo {
+  font-size: var(--fs-logo);
+  text-align: center;
+}
+
+.header-heading {
+  font-size: var(--fs-heading);
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  gap: 50px;
+}
+
+.card {
+  background-color: var(--bg-color);
+  border: 2px solid #000;
+}
+
+.card_heading {
+  padding: 0px 10px;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+.img {
+  inline-size: 100%;
+  max-height: 696px;
+}
+
+.bright {
+  filter: brightness(200%);
+}
+
+.contrast {
+  filter: contrast(200%);
+}
+
+.blur {
+  filter: blur(0.3rem);
+}
+
+.opacity {
+  filter: opacity(0.6)
+}
+
+.grayscale {
+  filter: grayscale(0.7);
+}
+
+.saturate {
+  filter: saturate(150%);
+}
+
+.sepia {
+  filter: sepia(90%);
+}
+
+.multiple-filter {
+  filter: brightness(150%) saturate(150%) blur(0.2rem);
+}
+
+.image-container {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  bottom: auto;
+  left: auto;
+  color: #000000;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--txt-stroke-color);
+  text-stroke: 1px var(--txt-stroke-color);
+}
+
+@supports ( (-webkit-text-stroke: 1px var(--txt-stroke-color)) or (text-stroke: 1px var(--txt-stroke-color)) ) {
+  .label {
+      -webkit-text-stroke: 1px var(--txt-stroke-color);
+      text-stroke: 1px var(--txt-stroke-color);
+  }
+}
+
+.card-text {
+  padding: 25px 25px 21px;
+  display: grid;
+  gap: 25px;
+  font-variation-settings: 'wght' var(--card-text-weight);
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.like-group {
+  display: flex;
+  justify-content: end;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button {
+ inline-size: 130px;
+ block-size: 38px;
+ border: 2px solid #000;
+ padding-top: 3px;
+}
+
+.button__text {
+ font-family: var(--accent-font);
+ font-size: 14px;
+}
+
+.save {
+  inline-size: clamp(306px, calc(295.789px + 2.723vw), 335px);
+  min-block-size: 55px;
+  margin: 45px clamp(34px, calc(-148.394px + 48.638vw), 552px) 100px;
+  background-color: var(--bg-color);
+  padding: 10px 17px;
+  gap: 8px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+dialog {
+  border: 2px solid #000;
+  background-color: var(--bg-color);
+  font-family: var(--accent-font);
+  width: clamp(341px, calc(336.775px + 1.127vw), 353px);
+  padding: 30px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+dialog::backdrop {
+background: linear-gradient(180deg,rgba(26, 26, 26, 0.85), rgba(30, 30, 40, 0.95));
+}
+
+dialog[open] .column-cont{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+dialog .floppy-save {
+  mix-blend-mode: normal;
+}
+
+.button-close {
+  width: 100%;
+  height: 38px;
+  background-color: var(--bg-color);
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button-effect:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+
+.button-effect {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--bg-color);
+  color: var(--bg-color);
+}
+
+.button-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  background-color: var(--accent-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.floppy-save, .button__text {
+  position: relative;
+  z-index: 3;
+  mix-blend-mode: difference;
+ }
+
+.button-effect:hover::before {
+  transform: translateX(0);
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .like-icon {
+  animation: like-icon-scale 0.3s ease-in 0.1s forwards;
+}
+.like-icon {
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-opacity 0.3s ease-in 0.3s forwards;
+}
+
+@media (width <= 375px) {
+.card_heading {
+  padding-top: 5px;
+  line-height: 25px;
+  }
+
+  .img {
+   max-height: 371px;
+  }
+
+.save {
+  padding: 17px;
+  grid-template-columns: 1fr;
+  } 
+
+.floppy-save {
+  width: 28px;
+  height: 28px;
+  justify-self: center;
+  }
 }
