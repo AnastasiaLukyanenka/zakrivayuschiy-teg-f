@@ -327,7 +327,7 @@ dialog .floppy-save {
 }
 
 @media (width <= 375px) {
-  
+
   .header {
     margin: 100px auto;
   }
@@ -373,7 +373,7 @@ dialog .floppy-save {
   dialog .floppy-save {
     width: 39px;
     height: 39px;
-    min-width: 39px; 
+    min-width: 39px;
   }
 
 }
